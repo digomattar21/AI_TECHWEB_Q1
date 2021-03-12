@@ -1,0 +1,35 @@
+<div class="card card-edit">
+  <form action="/" method="POST">
+    <div class="title-edit-delete-container">
+      <textarea name="update" id="update" cols="30" rows="1" style='display:none'>update</textarea>
+      <textarea name="titulo" id="tituloEdit" cols="30" rows="1">{title}</textarea>
+    </div>
+
+    <div class="card-content">
+      <textarea name="detalhes" id="detalhesEdit" cols="30" rows="10">{detalhes}</textarea>
+    </div>
+    <div
+      class="btn-container"
+      style="
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-top: 20px;
+      "
+    >
+      <textarea name="id" style="display: none">{id}</textarea>
+      <button
+        class="btn-remove"
+        style="
+          color: white;
+          background-color: rgb(14, 180, 14);
+          border: 1px solid rgb(14, 180, 14);
+          border-radius: 5px;
+        "
+        type="submit"
+      >
+        Salvar
+      </button>
+    </div>
+  </form>
+</div>

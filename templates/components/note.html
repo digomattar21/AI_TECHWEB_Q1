@@ -1,0 +1,20 @@
+<div class="card">
+  <div class='title-edit-delete-container'>
+    <h3 class="card-title">{title}</h3>
+  </div>
+  
+  <div class="card-content">
+    <p>{details}</p>
+  </div>
+  <div class='btn-container' style='display: flex; flex-direction: row; justify-content:space-evenly; margin-top: 20px;'>
+    <form method='post'>
+      <textarea name='id' style='display: none'>{id}</textarea>
+      <button class='btn-remove' style='color :white; background-color: red; border: 1px solid red; border-radius:5px' type='submit'>Remover</button>
+    </form>
+    <form action='/edit' method='post'>
+      <input name='edit' style='display: none' value='edit'></input>
+      <textarea name='id' style='display: none' >{id}</textarea>
+      <button class='btn-remove' style='color: white; background-color: rgb(14, 180, 14); border: 1px solid rgb(14, 180, 14); border-radius:5px' type='submit'>Editar</button>
+    </form>
+  </div>
+</div>
