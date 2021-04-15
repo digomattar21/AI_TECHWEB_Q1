@@ -81,4 +81,5 @@ def edit (request,db):
 
   return load_template('edit.html').format(noteEdit=notes).encode()
 
-    
+def notfound(request,db):
+  return load_template('404.html').encode()

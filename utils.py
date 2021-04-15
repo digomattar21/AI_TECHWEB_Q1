@@ -6,7 +6,14 @@ def extract_route(request):
     if 'GET' in line or 'POST' in line:
       split = line.split(' ')
       string = split[1]
-      return string[1:]
+      string2 = string.split('/')
+      if len(string2)>3:
+        routeArray = string2[-3:]
+        sep = '/'
+        new = sep.join(routeArray)
+        return new
+      else:
+        return string[1:]
 
 def read_file(file):
   cd = file.suffix

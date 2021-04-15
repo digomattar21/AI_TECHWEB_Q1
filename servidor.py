@@ -1,7 +1,7 @@
 import socket
 from pathlib import Path
 from utils import extract_route, read_file
-from views import index, edit
+from views import index, edit, notfound
 from database import Database, Note
 
 CUR_DIR = Path(__file__).parent
@@ -25,15 +25,16 @@ while True:
 
   route = extract_route(request)
   filepath = CUR_DIR / route
-  print(route)
+  print('route', route)
   if filepath.is_file():
     response = read_file(filepath)
   elif route == '':
     response = index(request, db)
   elif route == 'edit':
     response = edit(request, db)
-  else:
-    response = bytes()
+  elif route:
+    response = notfound(request,db)
+  
 
   client_connection.sendall('HTTP/1.1 200 OK\n\n'.encode() + response)
 
